@@ -1,0 +1,21 @@
+/* MEDIA QUERIES */
+@custom-media --max-mobile (width <= 480px);
+@custom-media --min-tablet (width > 480px);
+@custom-media --max-tablet (width < 769px);
+@custom-media --min-desktop (width >= 769px);
+@custom-media --min-desktop-large (width >= 992px);
+@custom-media --min-desktop-xlarge (width >= 1200px);
+@custom-media --min-desktop-xxlarge (width >= 1440px);
+
+:root {
+    /* COLORS */
+    --primary-color: #333333;
+    --light-color: #ffffff;
+    --dark-color: #111111;
+
+    /* FONT */
+    --primary-font: 'Montserrat', Arial, sans-serif;
+
+    /* OTHER */
+    --main-transition: .3s ease;
+}

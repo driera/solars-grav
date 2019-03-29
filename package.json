@@ -1,0 +1,48 @@
+{
+  "name": "haywire-grav",
+  "version": "0.4.4",
+  "homepage": "https://github.com/robbinworks/haywire-grav#readme",
+  "author": "Robbin Johansson <mail@robbin.works>",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robbinworks/haywire-grav.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robbinworks/haywire-grav/issues"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "yarn watch --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "babel-polyfill": "^6.26.0",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "2.0.1",
+    "cross-env": "^5.1.4",
+    "cssnano": "^4.1.10",
+    "laravel-mix": "^2.1.11",
+    "postcss-apply": "^0.12.0",
+    "postcss-color-function": "^4.0.1",
+    "postcss-custom-media": "^7.0.7",
+    "postcss-custom-properties": "^8.0.9",
+    "postcss-for": "^2.1.1",
+    "postcss-media-minmax": "^4.0.0",
+    "postcss-mixins": "^6.2.1",
+    "postcss-nested": "^4.1.2",
+    "vue": "^2.5.16"
+  },
+  "dependencies": {
+    "laravel-mix-stylelint": "^0.2.0",
+    "postcss-import": "^12.0.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^2.1.0",
+    "stylelint-webpack-plugin": "^0.10.5"
+  }
+}

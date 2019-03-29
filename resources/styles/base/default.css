@@ -1,0 +1,19 @@
+html {
+    font-family: var(--primary-font);
+}
+
+body {
+    &.is-project,
+    &.is-about {
+        padding-top: 60px;
+    }
+}
+
+.container {
+    @apply --container;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

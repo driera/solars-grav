@@ -1,0 +1,22 @@
+:root {
+    --container {
+        padding: 0 20px;
+
+        @media (--min-desktop) {
+            width: 750px;
+            margin: 0 auto;
+        }
+
+        @media (--min-desktop-large) {
+            width: 970px;
+        }
+
+        @media (--min-desktop-xlarge) {
+            width: 1170px;
+        }
+
+        @media (--min-desktop-xxlarge) {
+            width: 1300px;
+        }
+    }
+}
