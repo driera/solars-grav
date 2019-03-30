@@ -9,9 +9,14 @@
 
 :root {
     /* COLORS */
-    --primary-color: #333333;
-    --light-color: #ffffff;
-    --dark-color: #111111;
+    --primary-color: #2DB580;
+    --secondary-color: #5B5F97;
+    --tertiary-color: #EFF7F7;
+    --dark-color: #000000;
+    --gray-dark-color: #3B4144;
+    --gray-color: #6A706E;
+    --light-color: #F7F6F7;
+    --white-color: #FFFFFF;
 
     /* FONT */
     --primary-font: 'Montserrat', Arial, sans-serif;

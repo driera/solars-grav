@@ -1,0 +1,80 @@
+title: Product
+@extends: 
+    type: default
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+
+            fields:
+                content:
+                    fields:
+                        header.title:
+                            unset@: true
+                        header.media_order:
+                            unset@: true
+                        content:
+                            unset@: true
+                        product_details:
+                            type: section
+                            title: Detalles del producto
+                            underline: true
+                            fields:
+                                header.custom.name:
+                                    type: text
+                                    autofocus: true
+                                    toggleable: true
+                                    label: Nombre del producto
+                                header.custom.descrition:
+                                    type: textarea
+                                    toggleable: true
+                                    label: Descripción del producto
+                                header.custom.image:
+                                    type: filepicker
+                                    label: Imagen principal
+                                    folder: 'self@'
+                                    toggleable: true
+                                    preview_images: true
+                                    acccept:
+                                        - .png
+                                        - .jpg
+                                header.custom.location:
+                                    type: text
+                                    toggleable: true
+                                    label: Ubicación
+                                header.custom.dimension:
+                                    type: text
+                                    label: Superficie (m2)
+                                    toggleable: true
+                                    default: 100
+                                    validate:
+                                        type: int
+                                header.custom.groundType:
+                                    type: text
+                                    label: Tipo de terreno
+                                    toggleable: true
+                                    default: Urbano
+                                header.custom.contact.phone:
+                                    type: text
+                                    label: Teléfono de contacto
+                                    toggleable: true
+                                    default: 600100200
+                        related:
+                            type: section
+                            title: Otros
+                            underline: true
+                            fields:
+                                header.title:
+                                    type: text
+                                    autofocus: true
+                                    style: vertical
+                                    label: PLUGIN_ADMIN.TITLE
+                                header.media_order:
+                                    type: pagemedia
+                                    label: PLUGIN_ADMIN.PAGE_MEDIA
+                                
+
+

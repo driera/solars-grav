@@ -1,0 +1,56 @@
+title: Home
+@extends: 
+    type: default
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+
+            fields:
+                header:
+                    type: tab
+                    title: Header
+
+                    fields:
+                        content: 
+                            type: section
+                            title: Hero header
+                            underline: true
+
+                        columns: 
+                            type: columns
+                            fields:
+                                column1:
+                                    type: column
+                                    fields:
+                                        # HTML tag
+                                        header.custom.htmlTag:
+                                            type: select
+                                            size: short
+                                            label: HTML tag
+                                            options:
+                                                p: p
+                                                h1: h1
+                                                h2: h2
+                                                h3: h3
+                                                h4: h4
+                                                h5: h5
+                                                h6: h6
+                                        # Custom text field
+                                        header.custom.textField:
+                                            type: text
+                                            label: Custom text field
+                                column2:
+                                    type: column
+                                    fields:
+                                        # Cover image
+                                        header.custom.coverImage:
+                                            type: mediapicker
+                                            label: Cover image
+                                            folder: 'self@'
+                                            preview_images: true
+                                            accept:
+                                                - image/*

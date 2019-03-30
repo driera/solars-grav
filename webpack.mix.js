@@ -4,7 +4,7 @@ require( 'laravel-mix-stylelint' );
 let postCssProcessors = [
    require('postcss-import'),
    require('postcss-custom-properties')({
-       preserve: 'computed'
+       preserve: false //'computed'
    }),
    require('postcss-apply'),
    require('postcss-mixins'),

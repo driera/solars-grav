@@ -2,7 +2,7 @@
   "extends": ["stylelint-config-standard"],
   "plugins": [ "stylelint-order"],
   "rules": {
-    "color-hex-case": "lower",
+    "color-hex-case": "upper",
     "color-hex-length": "long",
     "number-leading-zero": "never",
     "value-list-max-empty-lines": 1,
@@ -15,24 +15,6 @@
     }],
     "custom-property-empty-line-before": "never",
     "indentation": 4,
-    "order/order": [
-      {
-        "type": "at-rule",
-        "name": "extend",
-        "hasBlock": false
-      },
-      {
-        "type": "at-rule",
-        "name": "include",
-        "hasBlock": false
-      },
-
-      "custom-properties",
-      "dollar-variables",
-      "declarations",
-      "rules",
-      "at-rules"
-    ],
     "order/properties-order": [
       [
         "position",

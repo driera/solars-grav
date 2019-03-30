@@ -1,1 +1,22 @@
-{% extends 'blog.html.twig' %}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <header class="main-header" style="background-image: url({{ header.custom.coverImage }});">
+        <div class="container">
+            <{{ header.custom.htmlTag }} class="main-header--title">
+                    {{ header.custom.textField }}
+            </{{ header.custom.htmlTag }}>
+        </div>
+    </header>
+
+    <section class="product-list">
+        <div class="container">
+            <h2 class="product-list--title">{{page.content}}</h2>
+            <div class="product-list--content">
+                 {% for product in page.find('/products').children.slice(0, 3) %}
+                    {% include '/partials/product-item.html.twig' %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
