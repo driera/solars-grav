@@ -1,5 +1,13 @@
 let mix = require('laravel-mix');
 require( 'laravel-mix-stylelint' );
+const LiveReloadPlugin = require('webpack-livereload-plugin');
+
+/*
+    |--------------------------------------------------------------------------
+    | Options
+    |--------------------------------------------------------------------------
+    |
+    */
 
 let postCssProcessors = [
    require('postcss-import'),
@@ -28,35 +36,37 @@ let postCssProcessors = [
 
 let stylelintOptions = {
    configFile:  path.join('./.stylelintrc'),
-   files: ['**/*.css', '**/*.vue', '**/*.blade.php'],
+   files: ['**/*.css', '**/*.vue', '**/*.html.twig'],
    syntax: ""
 }
 
 /*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+    |--------------------------------------------------------------------------
+    | Options
+    |--------------------------------------------------------------------------
+    |
+    */
+
+mix.webpackConfig({
+    plugins: [
+        new LiveReloadPlugin()
+    ]
+});
+
+
+/*
+    |--------------------------------------------------------------------------
+    | Mix Asset Management
+    |--------------------------------------------------------------------------
+    |
+    */
 
 mix.setPublicPath('dist')
-   .stylelint(stylelintOptions)
-   .js('resources/js/app.js', 'js/app.js')
-   .postCss('resources/styles/app.css', 'css/app.css', postCssProcessors)
-   // .sass('resources/sass/app.sass', 'css/app.css')
-   .options({
-      processCssUrls: false
+    .stylelint(stylelintOptions)
+    .postCss('resources/styles/app.css', 'css/app.css', postCssProcessors)
+    .js('resources/js/app.js', 'js/app.js')
+    .options({
+        processCssUrls: false
     })
-   .version()
-   .browserSync({
-      proxy: 'localhost:8000',
-      files: [
-         'dist/styles/{*,**/*}.css',
-         'dist/js/{*,**/*}.js',
-         'templates/{*,**/*}.html.twig'
-     ]
-  });
+    .version()
+    .disableSuccessNotifications();

@@ -28,7 +28,7 @@ form:
                                     autofocus: true
                                     toggleable: true
                                     label: Nombre del producto
-                                header.custom.descrition:
+                                header.custom.description:
                                     type: textarea
                                     toggleable: true
                                     label: Descripción del producto

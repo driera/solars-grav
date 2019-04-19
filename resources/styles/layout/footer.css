@@ -7,6 +7,8 @@
 }
 
 .footer-message--icon {
+    width: 1em;
+    height: 1em;
     margin-bottom: 20px;
     font-size: 80px;
 

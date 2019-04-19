@@ -1,22 +1,26 @@
+{% set product_gallery = product.media.images %}
+
 <div class="product-list--item grid-item">
     <a href="{{ product.url }}" class="grid-item--anchor">
-        <div class="grid-item--image" style="background-image: url({{ product.media[product.header.custom.image].cropResize(300, 300).url}});"></div>
+        <div class="grid-item--image" style="background-image: url({{ product.media[product.header.custom.image].cropResize(300, 300).url}});">
+            <div class="grid-item--image-number">{{ product_gallery | length }} fotos</div>
+        </div>
         
         <div class="grid-item--content">
             <h3 class="grid-item--name">{{ product.header.custom.name }}</h3>
-            <div class="grid-item--location">{{ product.header.custom.location}}</div>
-            <div class="grid-item--custom">
+            <div class="grid-item--details">
                 <span>{{ product.header.custom.dimension}}m<sup>2</sup></span>
                 <span>{{ product.header.custom.groundType}}</span>
             </div>
-            <div class="grid-item--description">{{ product.content }}</div>
+            <div class="grid-item--location">{{ product.header.custom.location}}</div>
+            <div class="grid-item--description">{{ product.header.custom.description | truncate(100) }}</div>
             <div class="grid-item--actions">
                 <span class="btn" data-href="tel:600100200">
-                    <svg class="icon icon-phone-call"><use xlink:href="/svg/svg-symbols.svg#icon-phone-call"></use></svg>
+                    {% include "/partials/svg/phone-call.svg.twig" %}
                     600 100 200
                 </span>
                 <span class="btn">
-                    <svg class="icon icon-chat"><use xlink:href="/svg/svg-symbols.svg#icon-chat"></use></svg>
+                    {% include "/partials/svg/chat.svg.twig" %}
                     Contactar
                 </span>
             </div>

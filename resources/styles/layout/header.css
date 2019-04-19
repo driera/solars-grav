@@ -1,4 +1,6 @@
 .main-header {
+    position: relative;
+    z-index: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,14 +10,47 @@
     background-size: cover;
 }
 
-.main-header--title {
-    max-width: 450px;
+.main-header--content {
+    position: relative;
+    max-width: 550px;
     margin: 0 auto;
     padding: 100px 0;
+}
+
+.main-header--title {
+    position: relative;
+    padding: 100px 0;
     color: var(--white-color);
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 1.4;
     text-align: center;
-    text-shadow: 0 2px 2px color(var(--dark-color) a(10%));
+    text-shadow: 0 2px 2px color(var(--dark-color) a(15%));
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: color(var(--dark-color) a(30%));
+        content: "";
+        transform: scale(.55, 1);
+    }
+}
+
+.main-header--intro {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+    font-size: 20px;
+    font-style: italic;
+}
+
+.main-header--text {
+    position: relative;
+    display: block;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-transform: uppercase;
 }

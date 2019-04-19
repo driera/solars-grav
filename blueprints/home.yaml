@@ -39,10 +39,14 @@ form:
                                                 h4: h4
                                                 h5: h5
                                                 h6: h6
+                                        # Custom intro field
+                                        header.custom.introField:
+                                            type: text
+                                            label: Texto intro
                                         # Custom text field
                                         header.custom.textField:
                                             type: text
-                                            label: Custom text field
+                                            label: Texto principal
                                 column2:
                                     type: column
                                     fields:

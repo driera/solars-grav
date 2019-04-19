@@ -3,9 +3,12 @@
 {% block content %}
     <header class="main-header" style="background-image: url({{ header.custom.coverImage }});">
         <div class="container">
-            <{{ header.custom.htmlTag }} class="main-header--title">
-                    {{ header.custom.textField }}
-            </{{ header.custom.htmlTag }}>
+            <div class="main-header--content">
+                <{{ header.custom.htmlTag }} class="main-header--title">
+                    <span class="main-header--intro">{{ header.custom.introField }}</span>
+                    <span class="main-header--text">{{ header.custom.textField }}</span>
+                </{{ header.custom.htmlTag }}>
+            </div>
         </div>
     </header>
 
@@ -13,7 +16,7 @@
         <div class="container">
             <h2 class="product-list--title">{{page.content}}</h2>
             <div class="product-list--content">
-                 {% for product in page.find('/products').children.slice(0, 3) %}
+                 {% for product in page.find('/products').children %}
                     {% include '/partials/product-item.html.twig' %}
                 {% endfor %}
             </div>

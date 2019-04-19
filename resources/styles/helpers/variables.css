@@ -9,18 +9,21 @@
 
 :root {
     /* COLORS */
-    --primary-color: #2DB580;
+    --primary-color: #3FB9BE;
     --secondary-color: #5B5F97;
     --tertiary-color: #EFF7F7;
     --dark-color: #000000;
     --gray-dark-color: #3B4144;
-    --gray-color: #6A706E;
+    --gray-color: #6A6F70;
+    --gray-light-color: #8C9698;
     --light-color: #F7F6F7;
     --white-color: #FFFFFF;
 
     /* FONT */
     --primary-font: 'Montserrat', Arial, sans-serif;
+    --secondary-font: 'Libre Baskerville', sans-serif;
 
     /* OTHER */
     --main-transition: .3s ease;
+    --box-shadow: 0 5px 20px color(var(--dark-color) a(25%));
 }
