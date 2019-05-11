@@ -1,2 +1,5 @@
 @import "product-list";
 @import "grid-item";
+@import "product-header";
+@import "breadcrumb";
+@import "product-media";

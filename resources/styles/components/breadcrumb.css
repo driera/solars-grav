@@ -1,0 +1,25 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--gray-light-color);
+    font-size: 13px;
+    line-height: 1.2;
+
+    a {
+        display: inline-block;
+        color: var(--primary-color);
+    }
+
+    span {
+        display: inline-block;
+        margin: 0 5px;
+        font-size: 2em;
+        font-weight: lighter;
+        line-height: .6;
+    }
+
+    div {
+        pointer-events: none;
+    }
+}

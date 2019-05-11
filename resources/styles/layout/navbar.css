@@ -156,6 +156,10 @@
         background: var(--light-color);
         transform-origin: 50% 50%;
         transition: var(--main-transition);
+
+        .product & {
+            background: var(--dark-color);
+        }
     }
 
     .is-nav-active & {

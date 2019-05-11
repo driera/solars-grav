@@ -1,0 +1,39 @@
+{% set page_gallery = page.media.images %}
+
+<div class="product-media">
+    <div class="container">
+        <div class="product-image" style="background-image: url({{ page.media[page.header.custom.image].cropResize(900, 900).url}});">
+            <div class="product-image--number">{{ page_gallery | length }} fotos</div>
+        </div>
+
+        <div class="product-form--container">
+            <div class="product-form">
+                <form action="">
+                    <div class="form-input">
+                        <label for="product-form--name">Nombre</label>
+                        <input type="text" id="product-form--name" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="product-form--email">Email</label>
+                        <input type="email" id="product-form--email" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="product-form--phone">Teléfono <span>(opcional)</span></label>
+                        <input type="tel" id="product-form--phone">
+                    </div>
+                    <div class="form-input">
+                        <label for="product-form--message">Mensaje</label>
+                        <textarea id="product-form--message" value="Tengo interés en {{ page.header.custom.name }}"></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <input class="submit-button" type="submit" value="Solicitar información">
+                    </div>
+                    <div class="form-terms">
+                        <p>Enviando el formulario, acepta que Solares En Valencia contacte contigo via email / teléfono con el fin de comentar tu solicitud de información, además este contacto se puede realizar por medios automatizados.</p>
+                        <p>Además, aceptas nuestros <a href="#">Términos y condiciones</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
