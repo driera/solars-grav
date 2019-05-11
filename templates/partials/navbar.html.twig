@@ -1,19 +1,15 @@
-<navbar inline-template>
-    <nav class="main-nav" role="navigation" aria-label="main navigation">
-        <a href="{{ base_url == '' ? '/' : base_url }}" class="main-nav--logo">
-            {{ config.site.title }}
-        </a>
+<nav class="main-nav {{ template }}" :class="{'is-nav-active': isNavActive}" role="navigation" aria-label="main navigation">
+    <a href="{{ base_url == '' ? '/' : base_url }}" class="main-nav--logo">
+        {{ config.site.title }}
+    </a>
 
-        <div class="main-nav--list">
-            {% block header_navigation %}
-                {% include 'partials/navigation.html.twig' %}
-            {% endblock %}
-        </div>
+    <div class="main-nav--list">
+        {% include 'partials/navigation.html.twig' %}
+    </div>
 
-        <a href="" class="main-nav--toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-    </nav>
-</navbar>
+    <a href="" class="main-nav--toggle" @click.prevent="toggleNav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+</nav>

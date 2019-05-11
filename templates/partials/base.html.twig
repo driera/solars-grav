@@ -10,7 +10,9 @@
 
 {# Wrap content in #app to allow vue components #}
 <div id="app">
-    {% include 'partials/navbar.html.twig' %}
+    {% block header_navigation %}
+        {% include 'partials/navbar.html.twig' %}
+    {% endblock %}
     {% block content %}{% endblock %}
     {% include 'partials/footer.html.twig' %}
 </div>

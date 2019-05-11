@@ -1,50 +1,33 @@
-{% macro loop(page) %}
-    {% for p in page.children.visible %}
-        {% set current_page = (p.active or p.activeChild) ? 'is-active' : '' %}
-        {% if p.children.visible.count > 0 %}
-            <div class="main-nav--item main-nav--dropdown">
-                <a 
-                href="{{ p.url }}" 
-                class="main-nav--link {{ p.slug }} {{ current_page }}" 
-                {% if p.template == 'external' %} target="_BLANK" rel="noopener" {% endif %}>
-                    {{ p.menu }}
-                </a>
-
-                <div class="main-nav--dropdown-list">
-                    {# {{ _self.loop(p) }} #}
-
-                    {% for children in p.children %}
-                        <a 
-                        href="{{ children.url }}" 
-                        class="main-nav--dropdown-item {{ 'is-' ~ children.slug }} {{ current_page }}" 
-                        {% if children.template == 'external' %} target="_BLANK" rel="noopener" {% endif %}>
-                            {{ children.menu }}
-                        </a>
-                    {% endfor %}
-                </div>
-            </div>
-        {% else %}
+{% for p in pages.children.visible %}
+    {% set current_page = (p.active or p.activeChild) ? 'is-active' : '' %}
+    
+    {% if p.children.visible.count > 0 %}
+        <div class="main-nav--item main-nav--dropdown is-open">
             <a 
             href="{{ p.url }}" 
-            class="main-nav--item main-nav--link {{ p.slug }} {{ current_page }}" 
+            class="main-nav--link {{ p.slug }} {{ current_page }}" 
             {% if p.template == 'external' %} target="_BLANK" rel="noopener" {% endif %}>
                 {{ p.menu }}
             </a>
-        {% endif %}
-    {% endfor %}
-{% endmacro %}
 
-{{ _self.loop(pages) }}
-{# <div class="navbar-end">
-    {% if theme_config.dropdown.enabled %}
-        {{ _self.loop(pages) }}
+            <div class="main-nav--dropdown-list">
+                {% for children in p.children %}
+                    {% set current_child = children.active ? 'is-children-active' : '' %}
+                    <a 
+                    href="{{ children.url }}" 
+                    class="main-nav--dropdown-item {{ 'is-' ~ children.slug }} {{ current_child }}" 
+                    {% if children.template == 'external' %} target="_BLANK" rel="noopener" {% endif %}>
+                        {{ children.menu }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
     {% else %}
-        {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
-            <a href="{{ page.url }}" class="navbar-item {{ p.slug }} {{ current_page }}" {% if p.template == 'external' %} target="_BLANK" rel="noopener" {% endif %}>
-                {{ page.menu }}
-            </a>
-        {% endfor %}
+        <a 
+        href="{{ p.url }}" 
+        class="main-nav--item main-nav--link {{ p.slug }} {{ current_page }}" 
+        {% if p.template == 'external' %} target="_BLANK" rel="noopener" {% endif %}>
+            {{ p.menu }}
+        </a>
     {% endif %}
-</div> #}
-
+{% endfor %}

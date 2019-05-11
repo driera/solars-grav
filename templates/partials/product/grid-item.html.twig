@@ -1,0 +1,30 @@
+{% set item = gridItem %}
+{% set item_gallery = item.media.images %}
+
+<div class="product-list--item grid-item">
+    <a href="{{ item.url }}" class="grid-item--anchor">
+        <div class="grid-item--image" style="background-image: url({{ item.media[item.header.custom.image].cropResize(300, 300).url}});">
+            <div class="grid-item--image-number">{{ item_gallery | length }} fotos</div>
+        </div>
+        
+        <div class="grid-item--content">
+            <h3 class="grid-item--name">{{ item.header.custom.name }}</h3>
+            <div class="grid-item--details">
+                <span>{{ item.header.custom.dimension}}m<sup>2</sup></span>
+                <span>{{ item.header.custom.groundType}}</span>
+            </div>
+            <div class="grid-item--location">{{ item.header.custom.location}}</div>
+            <div class="grid-item--description">{{ item.header.custom.description | truncate(100) }}</div>
+            <div class="grid-item--actions">
+                <span class="btn" data-href="tel:600100200">
+                    {% include "/partials/svg/phone-call.svg.twig" %}
+                    600 100 200
+                </span>
+                <span class="btn">
+                    {% include "/partials/svg/chat.svg.twig" %}
+                    Contactar
+                </span>
+            </div>
+        </div>
+    </a>
+</div>

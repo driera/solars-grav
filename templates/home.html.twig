@@ -17,7 +17,7 @@
             <h2 class="product-list--title">{{page.content}}</h2>
             <div class="product-list--content">
                  {% for product in page.find('/products').children %}
-                    {% include '/partials/product-item.html.twig' %}
+                    {% include '/partials/product/grid-item.html.twig' with {'gridItem': product} %}
                 {% endfor %}
             </div>
         </div>

@@ -1,6 +1,11 @@
 {% extends 'partials/base.html.twig' %}
 
+{% block header_navigation %}
+    {% include 'partials/navbar.html.twig' with {'template': 'product'} %}
+{% endblock %}
+
 {% block content %}
+
 <div class="product-list--item grid-item">
     <a href="#" class="grid-item--anchor">
         <div class="grid-item--image" style="background-image: url(https://source.unsplash.com/400x300/?ground,build);"></div>
