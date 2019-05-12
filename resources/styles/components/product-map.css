@@ -1,0 +1,24 @@
+.product-map {
+    padding: 30px 0;
+}
+
+.product-map--title {
+    padding-bottom: 5px;
+    font-size: 24px;
+}
+
+.product-map--location {
+    margin-bottom: 20px;
+    color: var(--gray-light-color);
+    font-size: 15px;
+}
+
+.product-map--container {
+    width: 70%;
+    border: 1px solid var(--tertiary-color);
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}

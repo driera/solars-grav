@@ -12,12 +12,12 @@ form:
             fields:
                 content:
                     fields:
-                        header.title:
-                            unset@: true
+                        # header.title:
+                            # unset@: true
                         header.media_order:
                             unset@: true
-                        content:
-                            unset@: true
+                        # content:
+                            # unset@: true
                         product_details:
                             type: section
                             title: Detalles del producto
